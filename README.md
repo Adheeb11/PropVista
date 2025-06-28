@@ -266,7 +266,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Authors
 
-- **Your Name** - _Initial work_ - [YourGitHub](https://github.com/yourusername)
+- **Mohamed Adheeb P T** - _Initial work_ - [YourGitHub](https://github.com/Adheeb11)
 
 ## 🙏 Acknowledgments
 
