@@ -1,0 +1,18 @@
+# Python
+*.pyc
+__pycache__/
+env/
+*.sqlite3
+
+# Node
+node_modules/
+build/
+dist/
+
+# OS
+.DS_Store
+
+# Others
+*.log
+*.env
+.env.*
