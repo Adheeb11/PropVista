@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { getPropertyById, sendContactMessage } from '../services/api';
+import PropertyMap from '../components/PropertyMap';
 
 const Spinner = () => (
   <div className="flex justify-center items-center py-16">
@@ -115,14 +116,26 @@ const PropertyDetail = () => {
             <span className="bg-teal-100 px-3 py-1 rounded text-sm">{property.city}</span>
             <span className="bg-blue-100 px-3 py-1 rounded text-sm">{property.type}</span>
           </div>
+          
           <div className="flex flex-wrap gap-2 mb-4">
             {features.map((f, i) => (
               <span key={i} className="bg-teal-50 px-2 py-1 rounded text-xs text-teal-700 border border-teal-100">{f}</span>
             ))}
           </div>
           <p className="mb-4 text-gray-600">{property.description}</p>
-          {/* Map Placeholder */}
-          <div className="bg-teal-50 rounded-lg h-40 flex items-center justify-center text-teal-400 mb-6 border border-teal-100">Map Placeholder</div>
+          
+          {/* Property Map */}
+          <div className="mb-6">
+            <h3 className="text-lg font-semibold mb-3 text-gray-900">📍 Property Location</h3>
+            <PropertyMap
+              latitude={property.latitude}
+              longitude={property.longitude}
+              address={property.full_address}
+              title={property.title}
+              className="w-full"
+            />
+          </div>
+          
           {/* Contact Form */}
           <form className="bg-teal-50 rounded-lg p-4 flex flex-col gap-3 border border-teal-100" onSubmit={handleContactSubmit}>
             <h3 className="text-lg font-semibold mb-2 text-teal-700">Contact Owner</h3>

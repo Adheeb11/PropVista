@@ -31,7 +31,7 @@ const Navbar = ({ isAuthenticated, user, setUser }) => {
     >
       <div className="container mx-auto flex justify-between items-center py-4 px-6">
         <Link to="/" className="flex items-center gap-2 text-2xl font-bold tracking-tight text-gray-900">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="logo" className="h-8 w-8" />
+          <img src="/logo.png" alt="PropVista logo" className="h-8 w-8" />
           PropVista
         </Link>
         <div className="space-x-6 hidden md:flex items-center">

@@ -20,18 +20,23 @@ class PropertySerializer(serializers.ModelSerializer):
     images = PropertyImageSerializer(many=True, read_only=True)
     features = FeatureSerializer(many=True, read_only=True)
     owner = UserSerializer(read_only=True)
+    full_address = serializers.ReadOnlyField()
+    has_location = serializers.ReadOnlyField()
 
     class Meta:
         model = Property
         fields = [
-            'id', 'title', 'price', 'city', 'type', 'features', 'images', 'description', 'owner', 'created_at', 'updated_at'
+            'id', 'title', 'price', 'city', 'address', 'area', 'latitude', 'longitude', 
+            'full_address', 'has_location', 'type', 'features', 'images', 'description', 
+            'owner', 'created_at', 'updated_at'
         ]
 
 class PropertyCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Property
         fields = [
-            'id', 'title', 'price', 'city', 'type', 'description', 'owner', 'created_at', 'updated_at'
+            'id', 'title', 'price', 'city', 'address', 'area', 'latitude', 'longitude',
+            'type', 'description', 'owner', 'created_at', 'updated_at'
         ]
         extra_kwargs = {
             'owner': {'required': True}
